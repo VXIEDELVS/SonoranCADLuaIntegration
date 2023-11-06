@@ -15,7 +15,6 @@ const KeyMaps = {
 	detail: "",
 	next: ""
 }
-
 var currCall = 0;
 
 function toggleDetail() {
@@ -163,7 +162,8 @@ const hasNextCall = () => {
 }
 
 const isAttached = (call) => {
-	return call.dispatch.idents.includes(myident);
+	if (!call) return false;
+	return call.dispatch?.idents.includes(myident);
 }
 
 function attach() {
